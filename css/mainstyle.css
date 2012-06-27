@@ -1,0 +1,141 @@
+/* mainstyle.css */
+body {
+margin:0px;
+padding:0px;
+font-family:'Cabin Condensed', sans-serif;
+}
+header {
+position:fixed;
+top:0;
+height:40px;
+padding:12px 0;
+background:black;
+width:100%;
+z-index:100;
+-webkit-box-shadow: 0px 3px 3px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 3px 3px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 3px 3px rgba(50, 50, 50, 0.75);
+}
+#logo {
+width:940px;
+margin:0px auto;
+}
+#wrapper {
+position:relative;
+top:45px;
+width:960px;
+margin:0px auto;
+}
+#main_content {
+padding:0px;
+margin:0px;
+}
+#main_content img{
+float:left;
+margin:15px 30px 15px 15px;
+-webkit-box-shadow: 0px 0px 12px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 12px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 12px rgba(50, 50, 50, 0.75);
+}
+#tour_demo{
+position:absolute;
+top:425px;
+left:453px;
+width:180px;
+height:60px;
+opacity:.5;
+background:#4f4f4f;
+-webkit-border-top-left-radius: 20px;
+-moz-border-radius-topleft: 20px;
+border-top-left-radius: 20px;
+-webkit-transition: opacity .5s linear;
+}
+#tour_demo p {
+text-align:right;
+font-size:1.82em;
+color:white;
+margin:0px;
+margin-top:14px;
+}
+
+#tour_demo:hover {
+opacity:.8;
+-webkit-transition: opacity .5s linear;
+}
+
+h1 {
+position:relative;
+top:10px;
+margin:5px;
+margin-bottom:-30px;
+font-weight:700;
+font-size:5em;
+color:#4f4f4f;
+text-align:center;
+}
+h2 {
+font-weight:700;
+font-size:3.4em;
+color:#999;
+line-height:.9em;
+text-align:center;
+margin-bottom:5px;
+}
+h3 {
+text-align:center;
+font-size:2.5em;
+margin-bottom:-30px;
+}
+h4 {
+text-align:center;
+font-size:1.5em;
+margin-bottom:-15px;
+}
+input {
+width:210px;
+height:20px;
+border-radius:5px;
+margin:5px;
+}
+button {
+background:#1B91E0;
+margin:5px;
+padding:6px;
+border-radius:5px;
+color:white;
+font-size:1.2em;
+-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.75)
+}
+bdi {
+color: #ffd79d;
+font-size:1.1em;
+}
+/*#features {
+float:left;
+width:230px;
+border:1px dashed red;
+}*/
+p {
+text-indent:20px;
+}
+li {
+padding-left:-20px;
+list-style-type:circle;
+}
+#prices h2 {
+margin-top:-20px;
+}
+.pricing{
+margin-top:-40px;
+width:32%;
+padding:.6%;
+float:left;
+}
+.pricing p,ul{
+color:#4f4f4f
+}
+.pricing button {
+margin-left:75px;
+}
