@@ -1,4 +1,6 @@
 #ignored files
+*.swp
+*.DS_Store
 *.mo
 *.egg-info
 *.egg
