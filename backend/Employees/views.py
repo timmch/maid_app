@@ -15,10 +15,11 @@ def index(request):
         'all_employees': all_employees,
 	}, [ip_address_processor])
     return HttpResponse(t.render(c))
+
 def individual_employee(request, idnum):
 	try:
-		id_num = int(idnum)
+		idnum = int(idnum)
 	except ValueError:
 		raise Http404()
-	html = "<html><body>Id number is %s.</body></html>" % (id_num)
+	html =  "<html><body>Employee to View is employee with id #%s</body></html>" % (idnum)
 	return HttpResponse(html)
