@@ -1,8 +1,6 @@
 .header {
-	background-color: #000;
-	color: #fff;
 	height: 40px;
-	padding: 15px 0;
+	padding: 30px 0;
 }
 
 .leftMargin {
@@ -74,6 +72,14 @@
 	top: 100px;
 }
 
+.smallMarginBottom {
+	margin-bottom: 10px;
+}
+
+.smallMarginRight {
+	margin-right: 10px;
+}
+
 .marginBottom {
 	margin-bottom: 20px;
 }
@@ -123,9 +129,51 @@
 	top: 13px;
 }
 
+.userPos {
+	margin: 0 10px;
+	position: relative;
+	top: 12px;
+}
+
 .searchPos {
 	position: relative;
 	top: 6px;
+}
+
+#feedback {
+	position: fixed;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	left: -45px;
+	top: 200px;
+	margin: 0;
+	background-color: #b94a48;
+	color: #fff;
+	-webkit-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-o-transform: rotate(90deg);
+	display:block;
+	padding: 20px;
+	transition: left .5s;
+	-moz-transition: left .5s;
+	-webkit-transition: left .5s;
+}
+
+#feedback a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#feedback:hover {
+	position: fixed;
+	left: -40px;
+	transition: left .5s;
+	-moz-transition: left .5s;
+	-webkit-transition: left .5s;
+}
+
+.modal-body textarea {
+	width: 98%;
 }
 
 #sidebar {
@@ -135,6 +183,145 @@
 	padding: 15px;
 	border-radius:5px;
 	overflow:auto;
+}
+
+#side {
+	padding-top: 10px;
+	position:relative;
+	width:275px;
+	margin:0 15px 0 0;
+	overflow:auto;
+}
+
+#side.sticky {
+	position: fixed;
+	top: 0;
+}
+
+.notiBox {
+	display: inline;
+	margin-right: 5px;
+}
+
+#comments p:first-child {
+	text-align: right;
+}
+
+.sideHead {
+	border: 1px solid #ccc;
+	padding: 10px;
+	z-index: 2;
+	border-radius:3px;
+	background-color: #eee;  
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#eee));
+	background-image: -webkit-linear-gradient(top, #fff, #eee); 
+	background-image: -moz-linear-gradient(top, #fff, #eee);
+	background-image: -ms-linear-gradient(top, #fff, #eee);
+	background-image: -o-linear-gradient(top, #fff, #eee);
+}
+
+.sideHead p {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.sideInfo {
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	width:245px;
+	padding: 10px;
+	margin: 0 auto;
+	font-size: .75em;
+}
+
+.si_last {
+	border-bottom: none;
+}
+
+.sideInfo td, .sideInfo tr {
+	vertical-align: top;
+	padding: 0;
+	margin: 0;
+	line-height: 1em;
+}
+
+.sideInfo:hover {
+	background-color: #eee;
+}
+
+.unconfirmedDate {
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	background-color: #222222;
+	color: #fff;
+	text-align: center;
+	font-weight: 700;
+	padding: 2px;
+	line-height: 1.1em;
+	font-size: .65em;
+	text-transform: uppercase;
+}
+
+.followBlueBG {
+	width: 16px;
+	height: 16px;
+	padding: 2px;
+	text-align: center;
+	overflow: hidden;
+	background-color: #3a87ad;
+}
+
+.social {
+	margin-top: 20px;
+	margin-left: 10px;
+	font-size: .85em;
+}
+
+.followBlue {
+	color: #3a87ad;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+.followRedBG {
+	width: 16px;
+	height: 16px;
+	padding: 2px;
+	text-align: center;
+	overflow: hidden;
+	background-color: #b94a48;
+}
+
+.followRed {
+	color: #b94a48;
+  	background-color: #f2dede;
+	border-color: #eed3d7;
+}
+
+.numDate {
+	font-size: 1.8em;
+}
+
+.sideInfo small {
+	font-size: .8em;
+}
+
+.sideInfo table {
+	width: 100%;
+}
+
+.tableOuter {
+	width: 10%;
+}
+
+.tableMiddle {
+	width: 80%;
+}
+
+.opacity {
+	opacity: .35;
 }
 
 .slideleft {
@@ -154,6 +341,19 @@
 #logo {
 	margin-left: 10px;
 	font-size: 1.75em;
+	position: relative;
+	bottom: 0px;
+	transition: bottom .5s;
+	-moz-transition: bottom .5s;
+	-webkit-transition: bottom .5s;
+}
+
+#logo:hover {
+	position: relative;
+	bottom: 3px;
+	transition: bottom .5s;
+	-moz-transition: bottom .5s;
+	-webkit-transition: bottom .5s; 
 }
 
 .floatleft {
@@ -184,18 +384,13 @@
 }
 
 .footer {
-	background-color: #eee;
-	color: #666;
-	padding: 50px;
-	margin-top: 20px;
+	background-color: #222222;
+	color: #fff;
+	padding: 10px;
 }
 
-#footerBQ {
-	padding-bottom: 40px;
-	background-color: #ccc;
-	border-radius: 10px;
-	border: 1px solid #bbb;
-	padding: 50px;
+.footer a {
+	color: #fff;
 }
 
 #twitter {
@@ -205,10 +400,9 @@
 }
 
 .bottomText {
-	border-top: 1px solid #ccc;
-	padding: 50px;
+	padding: 30px 10px;
 }
 
 .bottomText p {
-	text-align: center;
+	text-align: left;
 }
