@@ -32,3 +32,37 @@ $("#dropper").click(function(){
 	$("#drop").slideToggle();
 	$("#dropper").html("<i class='icon-chevron-up icon-white' id='iconSwitch'></i> Finish Now");
 });
+
+
+// Handles the sidebar collapsibles
+
+$(document).ready(function() {
+	$('#comments > .sideInfo').hide();
+	$('#timeoff > .sideInfo').hide();
+	$('#unconfirmed > .sideInfo').hide();
+	$('#followup > .sideInfo').hide();
+});
+
+$("#showAll").click(function (){
+	$('.sideInfo').slideDown('fast');
+});
+
+$("#hideAll").click(function (){
+	$('.sideInfo').slideUp('fast');
+});
+
+$('#comments > .sideHead').click(function() {
+	$('#comments > .sideInfo').slideToggle('fast');
+});
+
+$('#timeoff > .sideHead').click(function() {
+	$('#timeoff > .sideInfo').slideToggle('fast');
+});
+
+$('#unconfirmed > .sideHead').click(function() {
+	$('#unconfirmed > .sideInfo').slideToggle('fast');
+});
+
+$('#followup > .sideHead').click(function() {
+	$('#followup > .sideInfo').slideToggle('fast');
+});
