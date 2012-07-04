@@ -2,6 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from django.db import models
 
+
 allergies_choices = (
 	('Cat', 'Cat'),
 	('Dog', 'Dog'),
@@ -12,16 +13,18 @@ class Employee(models.Model):
 	first_name = models.CharField(max_length=30)
 	last_name = models.CharField(max_length=30)
 	street_add = models.CharField(max_length=50)
-	apt_add = models.CharField(max_length=30)
+	apt_add = models.CharField(max_length=30, blank=True)
 	city_add = models.CharField(max_length=30)
 	state_add = models.CharField(max_length=30)
 	zip_add = models.IntegerField()
 	phone = models.IntegerField()
 	email = models.EmailField(max_length=30)
 	dob = models.DateField()
-	allergens = models.CharField(max_length=30, choices=allergies_choices)
+	allergens = models.CharField(max_length=30, choices=allergies_choices, blank=True)
 	def __unicode__(self):
 		return self.first_name + ' ' + self.last_name
+	class Meta:
+		ordering = ['last_name']
 
 class EmployeeForm(ModelForm):
 	class Meta:
