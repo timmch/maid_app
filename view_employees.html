@@ -122,10 +122,10 @@
 									Name
 								</th>
 								<th class="span2">
-									Phone
+									Email
 								</th>
 								<th class="span2">
-									Allergens
+									Type
 								</th>
 							</tr>
 						</thead>
@@ -134,9 +134,9 @@
 								{% for employee in all_employees %}
 									<tr>
 									<ul>
-										<td>{{ employee.first_name }} {{ employee.last_name }}</td>
-										<td class="span2">{{ employee.phone }}</td>
-										<td class="span2">{{ employee.allergens }}</td>
+										<td>{{ employee.get_full_name }}</td>
+										<td class="span2">{{ employee.email }}</td>
+										<td class="span2">{{ employee.groups__name }}</td>
 									</ul>
 								{% endfor %}
 							{% else %}
@@ -169,10 +169,10 @@
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/bootstrap-popover.js"></script>
-		<script src="js/bootstrap-dropdown.js"></script>
-		<script src="js/tooltip.js"></script>
+		<script src="{{ MEDIA_URL }}js/bootstrap.js"></script>
+		<script src="{{ MEDIA_URL }}js/bootstrap-popover.js"></script>
+		<script src="{{ MEDIA_URL }}js/bootstrap-dropdown.js"></script>
+		<script src="{{ MEDIA_URL }}js/tooltip.js"></script>
 		<script src="js/script.js"></script>
 	</body>
 </html>
