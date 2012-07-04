@@ -5,6 +5,8 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response, redirect
 from django.forms.models import modelformset_factory
 from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 
 def ip_address_processor(request):
     return {'ip_address': request.META['REMOTE_ADDR']}
@@ -18,15 +20,4 @@ def index(request):
 	}, [ip_address_processor])
     return HttpResponse(t.render(c))
 
-def individual_employee(request, idnum):
-	try:
-		idnum = int(idnum)
-	except ValueError:
-		raise Http404()
-	html =  "<html><body>Employee to View is employee with id #%s</body></html>" % (idnum)
-	return HttpResponse(html)
-def tester(request):
-	t = loader.get_template('tester.html')
-	c = RequestContext(request, {'foo': 'bar'})
-	return HttpResponse(t.render(c))
 

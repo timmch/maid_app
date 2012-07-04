@@ -1,6 +1,8 @@
 from django import forms
 from django.forms import ModelForm
 from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
 
 
 allergies_choices = (
@@ -10,23 +12,29 @@ allergies_choices = (
 	('None', 'None'),
 )
 class Employee(models.Model):
-	first_name = models.CharField(max_length=30)
-	last_name = models.CharField(max_length=30)
+	account = models.OneToOneField(User, null=True, blank=True, default = None)
 	street_add = models.CharField(max_length=50)
 	apt_add = models.CharField(max_length=30, blank=True)
 	city_add = models.CharField(max_length=30)
 	state_add = models.CharField(max_length=30)
-	zip_add = models.IntegerField()
-	phone = models.IntegerField()
-	email = models.EmailField(max_length=30)
-	dob = models.DateField()
+	zip_add = models.IntegerField(null=True, blank=True)
+	phone = models.IntegerField(null=True, blank=True)
+	dob = models.DateField(null=True, blank=True)
 	allergens = models.CharField(max_length=30, choices=allergies_choices, blank=True)
+	description = models.TextField(blank=True)
+	def get_absolute_url(self):
+		return ('view_Employee', None, {'username': self.account.username})
 	def __unicode__(self):
-		return self.first_name + ' ' + self.last_name
-	class Meta:
-		ordering = ['last_name']
+		return self.account.username
+
+	def create_user_profile(sender, instance, created, **kwargs):
+		if created:
+			profile = Employee()
+			profile.user = instance
+			profile.save()
+
+	post_save.connect(create_user_profile, sender=User, dispatch_uid="users-profilecreation-Employee")	
 
 class EmployeeForm(ModelForm):
 	class Meta:
 		model = Employee
-

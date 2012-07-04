@@ -99,14 +99,14 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
-
+AUTH_PROFILE_MODULE = 'Employees.Employee'
 ROOT_URLCONF = 'backend.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 TEMPLATE_DIRS = (
-	'/home/pastirmaci/Development/maid_app/;
+	'/home/pastirmaci/Development/maid_app/'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
